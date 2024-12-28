@@ -1,0 +1,22 @@
+@startuml
+
+
+
+start
+:calculateAndDisplayPrices(double pricePerKg);
+:prices.clear();
+:result = new StringBuilder();
+:weight = 0.1;
+while (weight <= 1.0)
+    :cost = pricePerKg * weight;
+    :("%.1f кг - %.2f", weight, cost);
+    :result.append(formattedResult).append("\n");
+    :prices.add(formattedResult);
+    :weight += 0.1;
+endwhile
+:**вывод** результат;
+stop
+
+
+stop
+@enduml

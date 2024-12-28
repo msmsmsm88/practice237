@@ -1,0 +1,31 @@
+@startuml
+
+start
+:**ввод** a b c;
+
+
+
+
+:M = (A + B) / 2.0 * C;
+
+
+:k = (int) (M % 3);
+
+
+if (k == 1) then (Да)
+   
+    :y = Math.exp(M + C);
+elseif (k == 0) then (Да)
+    
+    :y = Math.log(A / (double) B);
+else (Нет)
+    
+    :y = Math.sqrt(Math.abs((A + B) / 2.0 + C));
+endif
+
+
+:("Значение функции y: " + y);
+
+stop
+
+@enduml

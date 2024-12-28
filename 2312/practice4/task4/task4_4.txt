@@ -1,0 +1,23 @@
+@startuml
+start
+
+:Получить текст из nTextField;
+:Преобразовать текст в int N;
+
+
+:isPowerOfThree = false;
+
+if (N > 0) then (Да)
+  
+    :temp = 1;
+
+    while (temp < N)
+       :temp *= 3;
+    endwhile
+    :isPowerOfThree = (temp == N);
+endif
+
+:(Boolean.toString(isPowerOfThree));
+
+stop
+@enduml

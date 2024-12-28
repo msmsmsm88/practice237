@@ -1,0 +1,24 @@
+@startuml
+start
+:input = numberTextFIeld.getText();
+  :number = Integer.parseInt(input);
+  if (number == 0) then (Да)
+  endif
+  if (number >= 10 and number <= 99) then (Да)
+    :sum += number;
+    :count++;
+  endif
+  :dataListView.getItems().add(number);
+  :numberTextFIeld.clear();
+  :("Введите натуральное число.");
+:sum = 0;
+:count = 0;
+if (count > 0) then (Да)
+  :average = (double) sum / count;
+:("Среднее арифметическое: %.2f", average));
+else (Нет)
+  :("NO");
+endif
+stop
+
+@enduml

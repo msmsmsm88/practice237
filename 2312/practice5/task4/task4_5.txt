@@ -1,0 +1,39 @@
+@startuml
+
+
+start
+  :x = Double.parseDouble(xText);
+  :n = Integer.parseInt(nText);
+    if (n <= 0) then (Да)
+      :("Ошибка ввода, N должно быть больше 0");
+  endif
+  :result = calculateCosApproximation(x, n);
+  :(String.format("%.10f", result));
+
+  :("Ошибка ввода, Введите корректные числа");
+
+:calculateCosApproximation(double x, int n);
+:result = 1.0;
+:i = 1;
+while (i <= n)
+    :numerator = Math.pow(x, 2 * i);
+    :denominator = factorial(2 * i);
+    :term =  Math.pow(x, 2 * i)/factorial(2 * i) ;
+    if (i % 2 == 0) then (Да)
+        :result += term;
+    else (Нет)
+        :result -= term;
+    endif
+    :i++;
+endwhile
+:factorial(int n);
+:result = 1;
+:i = 2;
+while (i <= n)
+    :result *= i;
+    :i++;
+endwhile
+
+stop
+
+@enduml

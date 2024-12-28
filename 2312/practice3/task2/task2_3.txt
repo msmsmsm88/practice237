@@ -1,0 +1,30 @@
+@startuml
+
+start
+
+
+
+:**ввод** n n1 n2 n3
+:**ввод**countPositive = 0;
+
+'
+if (N > 0) then (Да)
+  :countPositive++;
+endif
+
+
+if (N2 > 0) then (Да)
+  :countPositive++;
+endif
+
+
+if (N3 > 0) then (Да)
+  :countPositive++;
+endif
+
+:("Количество положительных чисел: " + countPositive);
+
+
+stop
+
+@enduml

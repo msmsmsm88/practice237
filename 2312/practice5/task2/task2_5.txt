@@ -1,0 +1,35 @@
+@startuml
+
+
+start
+:input = numberTextField.getText();
+  :solvedProblems = Integer.parseInt(input);
+  if (solvedProblems < 0 or solvedProblems > 10) then (Да)
+    :("Введите корректное количество решённых примеров (0-10).");
+  endif
+    :totalStudents++;
+  if (solvedProblems < 5) then (Да)
+    :unsatisfactoryCount++;
+  endif
+  if (solvedProblems == 10) then (Да)
+    :allSolved = true;
+  endif
+  :dataListView.getItems().add(solvedProblems);
+  :("Введите корректное число.");
+:totalStudents = 0;
+:unsatisfactoryCount = 0;
+:allSolved = false;
+
+
+if (totalStudents > 0) then (Да)
+  :("Неудовлетворительных оценок: " + unsatisfactoryCount);
+    if (allSolved) then (Да)
+        :(answerLabel.getText() + "\n" + "YES");
+    else (Нет)
+        :(answerLabel.getText() + "\n" + "NO");
+    endif
+else (Нет)
+    :("Не введены данные о учениках.");
+endif
+stop
+@enduml

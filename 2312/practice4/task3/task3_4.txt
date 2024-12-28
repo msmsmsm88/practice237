@@ -1,0 +1,44 @@
+@startuml
+
+start
+
+
+:a ,c ,h ,S = 0;
+
+switch (N)
+  case (1)
+    :a = M;
+  case (2)
+    :c = M;
+  case (3)
+    :h = M;
+  case (4)
+    :S = M;
+    :("Некорректный номер элемента");
+endswitch
+
+if (N == 1) then (Да)
+  :c = a * Math.sqrt(2);
+  :h = c / 2;
+  :S = (c * h) / 2;
+elseif (N == 2) then (Да)
+  :c = M;
+  :a = c / Math.sqrt(2);
+  :h = c / 2;
+  :S = (c * h) / 2;
+elseif (N == 3) then (Да)
+  :h = M;
+  :c = M * 2;
+  :a = c / Math.sqrt(2);
+  :S = (c * h) / 2;
+elseif (N == 4) then (Да)
+  :S = M;
+  :c = Math.sqrt(2 * S);
+  :h = c / 2;
+  :a = c / Math.sqrt(2);
+endif
+
+:("a=%.2f, c=%.2f, h=%.2f, S=%.2f", a, c, h, S));
+stop
+
+@enduml
